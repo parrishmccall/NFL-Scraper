@@ -42,7 +42,7 @@ def schedule_and_results(file):
 
     for x in range(22,25):
         df.rename(columns={df.columns[x]:"Expected Points"}, inplace=True)
-
+    # Use os.rename to overwrite the original file to prevent duplicate data
     df.to_csv(os.path.dirname(file) + "/1.csv")
     os.rename(os.path.dirname(file) + "/1.csv", os.path.dirname(file) + "/schedule_and_results.csv")
 
@@ -57,7 +57,7 @@ def team_conversions(file):
 
     for x in range(7, 10):
         df.rename(columns={df.columns[x]: "Red Zone"}, inplace=True)
-
+    # Use os.rename to overwrite the original file to prevent duplicate data
     df.to_csv(os.path.dirname(file) + "/2.csv")
     os.rename(os.path.dirname(file) + "/2.csv", os.path.dirname(file) + "/team_conversions.csv")
 
